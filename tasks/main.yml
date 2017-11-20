@@ -1,0 +1,8 @@
+---
+- name: Set up haveged
+  block:
+  - name: Install haveged
+    package: name=haveged state=present
+  - name: Ensure haveged is started
+    service: name=haveged state=started enabled=yes
+  when: ansible_virtualization_type is not defined or not ((ansible_virtualization_type == 'openvz' or ansible_virtualization_type == 'lxc') and ansible_virtualization_role == 'guest')

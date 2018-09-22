@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: haveged
   author: Volodymyr Kolesnykov
   description: Haveged role
   license: MIT
